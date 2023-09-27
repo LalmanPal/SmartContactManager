@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<section>
+	<div class="container">
+	<div class="card text-center">
+	<div class="card-body">
+	<img   src=""  style="height: 150px;width: 150px;" class="my_profile_picture" th:src="@{'/Image/'+${user.imagesUrl}}"  alt="profile photo">
+	<h1 th:text="${user.name}"></h1>
+	<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">UID</th>
+								<th scope="col">LCM<span th:text="${user.id}"></span></th>
+								
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">Email</th>
+								<td ><span th:text="${user.email}"></span></td>
+								
+							</tr>
+							
+							<tr>
+								<th scope="row">User Role</th>
+								<td ><span th:text="${user.role}"></span></td>
+								
+							</tr>
+							<tr>
+								<th scope="row">Account Active</th>
+								<td ><span th:text="${user.enabled}"></span></td>
+								
+							</tr>
+							<tr>
+								<th scope="row">About You</th>
+								<td ><span th:text="${user.about}"></span></td>
+								
+							</tr>
+							
+						</tbody>
+						
+					</table>
+	
+	</div>
+	</div>
+	</div>
+	<script>
+	$(document).ready(()=>{
+		$(".item").removeClass("active");
+		$("#profile-link").addClass("active");
+	});
+	</script>
+	</section>
+</body>
+</html>
